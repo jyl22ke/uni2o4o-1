@@ -268,7 +268,7 @@ $(function (){
 //================== 이미지 & description 화면================
 	for ( i=0 ; i < trimgs.length ; i++ )
 		{
-        if (trimgs[i][5].indexOf(c_cd) != -1) { //=== "나19", "폭포", "바위 나무"
+        if (trimgs[i][5].indexOf(c_cd) != -1) { //=== "내19", "폭포", "바위 나무"
 					if (trimgs[i][3] ==""){}
 					else{
 						if (trimgs[i][4] ==""){}
@@ -290,7 +290,7 @@ function yms(){
 	$(function (){
 		$(".container").hide();
 		$(".container1").show();
-		init();
+		yminit();
 	});
 };
 
@@ -788,7 +788,7 @@ var dur = null; var t = null; var num=null;
 
 var orderBy = "asc";
 
-function init(){
+function yminit(){
   tagParsing(ytbm, true);
 
   //click Evt 정렬
@@ -823,7 +823,7 @@ function objSort(obj, sort){
   }
 }
 
-function tagParsing(obj, init){
+function tagParsing(obj, yminit){
   var len = obj.length;
   var tag = '';
   for(i=0; i<obj.length; i++){
