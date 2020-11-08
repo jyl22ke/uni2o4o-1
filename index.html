@@ -61,9 +61,9 @@
 	
 	li{font-size:0.8em;line-height:180%;}
 	img{max-width:100%;text-align:center;margin:1%;}
-	.pcanvas>div{color:#ffccff;background:black;}
+	.pcanvas>div{color:#ffccff;background:black;padding:3%;}
 	.pcanvas h2{padding-top:2%;}
-	.pcanvas button{cursor:pointer;margin:3%;margin-left:6%;color:#f00;}
+	.pcanvas button{cursor:pointer;margin:3%;color:#f00;}
 
 	.slid1{position: absolute;text-align: center;	animation:myslide 15s -12.5s ease infinite;}
 	.slid2{position: absolute;text-align: center;	animation:myslide 15s -10s ease infinite;}
@@ -225,7 +225,7 @@ $(function (){
 	var ccdn = new Array; var ccdsum = "";
 	musbox( null,5);
 
-	ccdn.push('<div class="pcanvas"><div class="header"><button class="btn" onClick="vme();">RETURN</button><h2>' + c_cd0 + c_cd + ' 사진모음......</h2></div><div class="main">');
+	ccdn.push('<div class="pcanvas"><div class="header"><button class="btn" onClick="vme();">RETURN</button><h2>' + c_cd0 + c_cd + ' 사진모음......</h2></div><div class="main"><p class="ta">배경음악은..... <span class="tb">'+titlm+'</span></p><p class="tc">'+titln+'</p>');
 
 		c_cda = Number(c_cd1);
 		for (k=0;k<rec ;k++ ){
@@ -261,7 +261,7 @@ $(function (){
   musbox( null,5);
 
   var ccdn = new Array; var ccdsum = "";
- 		ccdn.push('<div class="pcanvas"><div class="header"><button class="btn" onClick="vme();">RETURN</button><h2>' + c_cd0 + c_cd + ' 사진모음......</h2></div><div class="main">');
+ 		ccdn.push('<div class="pcanvas"><div class="header"><button class="btn" onClick="vme();">RETURN</button><h2>' + c_cd0 + c_cd + ' 사진모음......</h2></div><div class="main"><p class="ta">배경음악은..... <span class="tb">'+titlm+'</span></p><p class="tc">'+titln+'</p>');
 
 //================== 이미지 & description 화면================
 	for ( i=0 ; i < trimgs.length ; i++ )
