@@ -219,32 +219,27 @@ if (uval !== ""){
 }else {
 	  var num = 0;
 	  var ctg = "" ;var c_cd = ""; var c_cd0 = ""; var c_cd1 = ""; var cod = "";
-	switch (ctg) {
-	  case "1" :
-		alplist();
-		$(".item").show();
+	function bran(ctg){
+	$(function(){
+		if (ctg == "1"){
+			alplist();
+			$(".item").show();
 
-		$(function() {
-			$(document).on("click", ".mnt", function(){
-				seq=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입
-				$(".item").hide();
-				alprpt(seq);
+			$(function() {
+				$(document).on("click", ".mnt", function(){
+					seq=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입
+					$(".item").hide();
+					alprpt();
+				});
 			});
-		});
-		$(".mmenu").hide();
-	    break;
-	  case "2" :
-		c_cd0 = "";c_cd = "내"; vwpriv();    //===== :contains("내")
-	    break;
-	  case "3" :
-		c_cd0 = "";c_cd = "폭포"; cod = c_cd; vwphoto();
-	    break;
-	  case "4" :
-		c_cd0 = "기묘한 ";c_cd = "바위 나무"; cod = c_cd; vwphoto();
-	    break;
-	  case "5" :
-		yms();
-	    break;
+			$(".mmenu").hide();
+
+		}else {if (ctg == "2"){c_cd0 = "";c_cd = "내"; vwpriv();    //===== :contains("내")
+		}else	{if (ctg == "3"){c_cd0 = "";c_cd = "폭포"; cod = c_cd; vwphoto();
+		}else	{if (ctg == "4"){c_cd0 = "기묘한 ";c_cd = "바위 나무"; cod = c_cd; vwphoto();
+		}else	{if (ctg == "5"){yms();}
+		}}}}
+	});
 	};
 };
 			
