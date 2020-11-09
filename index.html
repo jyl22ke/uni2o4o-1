@@ -23,7 +23,7 @@
 	.wfall{grid-area:c;background:#e0ebeb url(./img_wfall.jpg) no-repeat center;}
 	.rock{grid-area:d;background:#e0ebeb url(./img_rock.jpg) no-repeat center;}
 	.priv{grid-area:b;background:#e0ebeb url(./img_priv.jpg) no-repeat center;}
-	.bl-a{grid-area:e;background:#e0ebeb;}
+	.srpt{grid-area:e;background:#e0ebeb;}
 	.ostr{grid-area:f;background:#e0ebeb url(./img_ostr.jpg) no-repeat center;}
 	.yms{grid-area:g;background:#e0ebeb url(./mus.jpg) no-repeat center;}
 	.combo{grid-area:m;}
@@ -117,8 +117,7 @@
 		<div class="priv" onclick="bran(2);">2내사진</div>
 		<div class="wfall" onclick="bran(3);">3폭포</div>
 		<div class="rock" onclick="bran(4);">4기묘한 바위 나무</div>
- 		<div class="bl-a" onclick="bran(5);">5산행기</div>
-<!--		<div class="bl-a">5</div>-->
+ 		<div class="srpt" onclick="bran(5);">5산행기</div>
 		<div class="ostr" onclick="location.href='https://jyl22ke.github.io/uni2o4o/';">6해외 여행사진</div>
 		<div class="yms" onclick="bran(6);">7음악감상</div>
 		<div class="right"></div>
@@ -207,7 +206,7 @@ $(function(){
   //*== ●●●●●●●● s_rpt();      ----산행기 ----start==========
 function s_rpt(){
 $(function (){
-	seq = "338";
+	seq = "336";
 	alprpt(seq);
 	$(".mmenu").hide();
 });
@@ -333,8 +332,8 @@ function cme(){		//-- 산행사진에서 계절별 테이블로 RETURN 할때
 function sme(){		//-- 산행기에서 메인메뉴로 RETURN 할때
 	stopVideo();
 	$(".canvas").remove();
-	location.reload();
 	$(".mmenu").show();
+	location.reload();
 };
 
 function vme(){		//-- 테마별 사진모음에서 RETURN 할때
