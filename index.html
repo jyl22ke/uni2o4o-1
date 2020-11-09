@@ -199,11 +199,20 @@ $(function(){
 	}else	{if (ctg == "3"){c_cd0 = "";c_cd = "폭포"; cod = c_cd; vwphoto();
 	}else	{if (ctg == "4"){c_cd0 = "기묘한 ";c_cd = "바위 나무"; cod = c_cd; vwphoto();
 	}else	{if (ctg == "5"){yms();
-	}else	{if (ctg == "6"){alprpt("338"),$(".mmenu").hide();}
+	}else	{if (ctg == "6"){s_rpt();}
 	}}}}}
 });
 };
 
+  //*== ●●●●●●●● s_rpt();      ----산행기 ----start==========
+function s_rpt(){
+$(function (){
+	alprpt("338");
+	$(".mmenu").hide();
+		
+});
+};
+		
   //*== ●●●●●●●● vwpriv();      ----내 사진모음 ----start==========
 	 var c_cda = 0; var rec = 1;
 
@@ -320,6 +329,11 @@ function cme(){		//-- 산행사진에서 계절별 테이블로 RETURN 할때
 	stopVideo();
 	$(".canvas").remove();
 	$(".item").show();
+};
+function sme(){		//-- 산행기에서 메인메뉴로 RETURN 할때
+	stopVideo();
+	$(".canvas").remove();
+	$(".mmenu").show();
 };
 
 function vme(){		//-- 테마별 사진모음에서 RETURN 할때
