@@ -117,7 +117,8 @@
 		<div class="priv" onclick="bran(2);">2내사진</div>
 		<div class="wfall" onclick="bran(3);">3폭포</div>
 		<div class="rock" onclick="bran(4);">4기묘한 바위 나무</div>
-		<div class="bl-a">5</div>
+ 		<div class="bl-a" onclick="bran(6);">5산행기</div>
+<!--		<div class="bl-a">5</div>-->
 		<div class="ostr" onclick="location.href='https://jyl22ke.github.io/uni2o4o/';">6해외 여행사진</div>
 		<div class="yms" onclick="bran(5);">7음악감상</div>
 		<div class="right"></div>
@@ -198,7 +199,8 @@ $(function(){
 	}else	{if (ctg == "3"){c_cd0 = "";c_cd = "폭포"; cod = c_cd; vwphoto();
 	}else	{if (ctg == "4"){c_cd0 = "기묘한 ";c_cd = "바위 나무"; cod = c_cd; vwphoto();
 	}else	{if (ctg == "5"){yms();}
-	}}}}
+	}else	{if (ctg == "6"){alprpt(338);}
+	}}}}}
 });
 };
 
