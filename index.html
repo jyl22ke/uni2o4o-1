@@ -311,7 +311,7 @@ function ime(){		//-- 계절별 테이블에서 RETURN 할때
 	$(".item").hide();
 	$(".contents").remove();
 	location.reload();
-    $(".mmenu").show();
+        $(".mmenu").show();
 };
 
 function item(){		//-- 산행지list에서 계절별 테이블로 RETURN 할때
@@ -333,6 +333,7 @@ function cme(){		//-- 산행사진에서 계절별 테이블로 RETURN 할때
 function sme(){		//-- 산행기에서 메인메뉴로 RETURN 할때
 	stopVideo();
 	$(".canvas").remove();
+	location.reload();
 	$(".mmenu").show();
 };
 
@@ -340,7 +341,7 @@ function vme(){		//-- 테마별 사진모음에서 RETURN 할때
 	stopVideo();
 	$(".pcanvas").remove();
 	$(".combo").remove();
-    $(".mmenu").show();
+        $(".mmenu").show();
 };
 
 function yme(){		//-- 음악감상에서 RETURN 할때
