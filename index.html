@@ -199,7 +199,7 @@ window.onload = function () {
 	var getData =  _GET(search);
 	uval = getData.val;
 }
-$(function(){
+ 
 //====== club, seq, opn 지정 =====
 if (uval.length == 0){
 	clb = ""; club = ""; opn = "n";
@@ -224,8 +224,8 @@ switch (clb) {
 };
 //====== mmenu / alprpt(seq 지정시) 실행
 if (seq !== ""){
-	alprpt(seq);
 	$(".mmenu").hide();
+	alprpt(seq);
 }else {
 
 	function bran(ctg){
@@ -251,7 +251,7 @@ if (seq !== ""){
 		});
 	};
 };
-});			
+ 			
   //*== ●●●●●●●● vwpriv();      ----내 사진모음 ----start==========
 	 var c_cda = 0; var rec = 1;
 
