@@ -221,6 +221,7 @@ switch (clb) {
     break;
 };
 //====== mmenu / alprpt(seq 지정시) 실행
+$(function(){
 if (seq !== ""){
 	alprpt(seq);
 	$(".mmenu").hide();
@@ -251,7 +252,7 @@ if (seq !== ""){
 		});
 	};
 };
-			
+});			
   //*== ●●●●●●●● vwpriv();      ----내 사진모음 ----start==========
 	 var c_cda = 0; var rec = 1;
 
