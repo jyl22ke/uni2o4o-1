@@ -198,40 +198,35 @@ window.onload = function () {
 	var getData =  _GET(search);
 	uval = getData.val;
 
-	if (uval.length <4){
+	if (uval.length == 0){
+		clb = ""; club = ""; opn = "n";
+		seq = "";
+	}else if (uval.length == 1){
 		clb = uval.substr(0,1);
 		seq = "";
-	}else{
+	}else if (uval.length == 4){
 		clb = uval.substr(0,1);
 		seq = uval.substr(1,3);
 	}
-}
-
-if (uval !== ""){
 	switch (clb) {
 	  case "a" :
-	    club = "산술애";
+	    club = "산술애"; opn = "y";
 	    break;
 	  case "b" :
-	    club = "부중산";
+	    club = "부중산"; opn = "y";
 	    break;
 	  case "c" :
-	    club = "";
+	    club = ""; opn = "y";
 	    break;
 	};
-	if (seq == ""){
-		opn = "y";
-		bran(1);
-	}else{
-	    alprpt(seq);
-		$(".mmenu").hide();
-	};
+}
 
+if (seq !== ""){
+	alprpt(seq);
+	$(".mmenu").hide();
 }else {
-	var num = 0; club = ""; opn = "n";
+	var num = 0; 
 	var ctg = "" ;var c_cd = ""; var c_cd0 = ""; var c_cd1 = ""; var cod = "";
-	bran(ctg);
-};
 
 function bran(ctg){
 	$(function(){
@@ -243,7 +238,7 @@ function bran(ctg){
 				$(document).on("click", ".mnt", function(){
 					seq=$(this).attr('title');  //*변수생성하여 클릭한 title을 대입
 					$(".item").hide();
-					alprpt();
+					alprpt(seq);
 				});
 			});
 			$(".mmenu").hide();
@@ -254,6 +249,7 @@ function bran(ctg){
 		}else	{if (ctg == "5"){yms();}
 		}}}}
 	});
+};
 };
 			
   //*== ●●●●●●●● vwpriv();      ----내 사진모음 ----start==========
