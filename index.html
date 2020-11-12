@@ -177,6 +177,7 @@ function fread(fn){
   var opn = "y"; //--- (사진공개)   "y": 전체공개, "n": 일부공개tlistg();
   //--■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
   var num = 0; 	var uval = ""; var clb = "";
+  var ctg = "" ;var c_cd = ""; var c_cd0 = ""; var c_cd1 = ""; var cod = "";
 
 //================== seq 값 읽어오기 ================
     function _GET(search) {
@@ -198,6 +199,7 @@ window.onload = function () {
 	var getData =  _GET(search);
 	uval = getData.val;
 }
+$(function(){
 //====== club, seq, opn 지정 =====
 if (uval.length == 0){
 	clb = ""; club = ""; opn = "n";
@@ -221,13 +223,10 @@ switch (clb) {
     break;
 };
 //====== mmenu / alprpt(seq 지정시) 실행
-$(function(){
 if (seq !== ""){
 	alprpt(seq);
 	$(".mmenu").hide();
 }else {
-	var num = 0; 
-	var ctg = "" ;var c_cd = ""; var c_cd0 = ""; var c_cd1 = ""; var cod = "";
 
 	function bran(ctg){
 		$(function(){
