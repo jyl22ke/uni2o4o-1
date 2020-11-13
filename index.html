@@ -150,6 +150,7 @@ function fread(fn){
 
 	$.ajax({
 		url:fileName,
+//    headers: {  'Access-Control-Allow-Origin': '../uni2o4o-1/' },
 		dataType:'text',
 		success: function(da) {
 			var textLine = '<script type="text/javascript">var ' + fn + '=[';
@@ -193,13 +194,11 @@ function fread(fn){
         }
         return obj;
     }
-
 window.onload = function () {
 	var search = window.location.search;
 	var getData =  _GET(search);
 	uval = getData.val;
 }
-
 //====== club, seq, opn 지정 =====
 if (uval.length == 0){
 	clb = ""; club = ""; opn = "n";
