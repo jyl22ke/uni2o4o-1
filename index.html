@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>load demo</title>
+  <style>
+  body {
+    font-size: 12px;
+    font-family: Arial;
+	}
+  div{
+	float:left;
+	border:1px solid red;
+	width:600px;
+	height:400px;
+	}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+<div id="success">
+<span><b>1 Successful Response (should be blank):</b></span>
+</div>
+<div id="success2">
+<span><b>2 Successful Response (should be blank):</b></span>
+</div>
+<div id="success3">
+<span><b>3 Successful Response (should be blank):</b></span>
+</div>
+<div id="success4">
+<span><b>4 Successful Response (should be blank):</b></span>
+</div>
+<div id="success5">
+<span><b>5 Successful Response (should be blank):</b></span>
+</div>
+<div id="error">
+<span><b>Error Response:</b></span>
+</div>
+ 
+<script>
+$( "#success" ).load( "https://finance.naver.com/item/fchart.nhn?code=003490", function( response, status, xhr ) {
+  if ( status == "error" ) {
+    var msg = "Sorry but there was an error: ";
+    $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
+  }
+});
+</script>
+ 
+</body>
+</html>
