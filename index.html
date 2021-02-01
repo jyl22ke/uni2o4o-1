@@ -81,9 +81,11 @@ function mkChart(){
 	});
 };
 
-async function vwChart() {
-	await fread("codeList");
+function vwChart() {
+$(function (){
+	fread("codeList");
 	mkChart();
+});
 };
 
   </script>
