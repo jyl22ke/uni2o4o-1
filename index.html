@@ -36,17 +36,37 @@
   <div class="container"></div>
 
   <script type="text/javascript">
-  var codeList = [
-["드래곤플라이","A030350"],
-["CS","A065770"],
-["크라운제과","A264900"],
-["대한항공","A003490"],
-["삼성전자","A005930"],
-["현대차","A005380"],
-["현대오토에버","A307950"],
-["현대건설","A000720"],
-["한진칼","A180640"]
-];
+// csv 파일 읽어오는 함수-------------------
+function fread(fn){
+    $(function (){
+	var fileName = "./" + fn + ".csv";	// 파일 이름
+
+	$.ajax({
+		url:fileName,
+		dataType:'text',
+		async: false,
+		success: function(da) {
+			var textLine = '<script type="text/javascript">var ' + fn + '=[';
+                        var rows = da.split('\n');
+                        for (var i = 0; i < rows.length; i++) {
+				if (i == 0){textLine += '['}else{textLine += ',['};
+				var cells = rows[i].split(',');
+                                for (var j = 0; j < cells.length; j++) {
+					textLine += '"';
+					textLine += cells[j].trim();;
+					if (j == cells.length-1){textLine += '"'}else{textLine += '",'};
+				}
+				textLine += ']';
+			}	
+			textLine += ']';			
+			$('head').append(textLine);
+		}
+	});
+	return fn;
+    });
+};
+fread("codeList");
+
 
 // View Chart 화면 생성-------------------------
 var xt = new Array;
@@ -65,6 +85,7 @@ function vwChart(){
 	});
 };
 vwChart();
+
 
   </script>
 </body>
