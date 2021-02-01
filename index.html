@@ -81,13 +81,10 @@ function mkChart(){
 	});
 };
 
-$(function (){
-	async function vwChart() {
-		await fread("codeList");
-		mkChart();
-	};
-});
-
+async function vwChart() {
+	await fread("codeList");
+	mkChart();
+};
 
   </script>
 </body>
