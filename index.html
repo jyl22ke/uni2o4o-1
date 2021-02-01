@@ -36,9 +36,7 @@
   <div class="container"></div>
 
   <script type="text/javascript">
-// csv 파일 읽어오기-----------------------
-fread("codeList");
-	
+// csv 파일 읽어오는 함수-------------------
 function fread(fn){
     $(function (){
 	var fileName = "./" + fn + ".csv";	// 파일 이름
@@ -69,14 +67,18 @@ function fread(fn){
 // View Chart 화면 생성-------------------------
 var name = ""; var fcode = ""; var code = ""; var xt = new Array;
 
-for ( i=0 ; i <codeList.length ; i++ ){
-	xt.push('<div class="vs"><span><b>' + codeList[i][0] + ' ' + codeList[i][1] + '</b></span><br><div class="ss"><iframe style="position:relative; top:-280px; left:-20px;" src="https://finance.naver.com/item/fchart.nhn?code=' + codeList[i][1].substring(1,7) + '" width="632" height="1070" scrolling="no" frameborder="0"></iframe></div></div>');
-};
+$(function (){
+	fread("codeList");
 
-for ( i=0 ; i <6 ; i++ ){
-	txt = xt[i];
-	$('.container').append([txt]);
-};
+	for ( i=0 ; i <codeList.length ; i++ ){
+		xt.push('<div class="vs"><span><b>' + codeList[i][0] + ' ' + codeList[i][1] + '</b></span><br><div class="ss"><iframe style="position:relative; top:-280px; left:-20px;" src="https://finance.naver.com/item/fchart.nhn?code=' + codeList[i][1].substring(1,7) + '" width="632" height="1070" scrolling="no" frameborder="0"></iframe></div></div>');
+	};
+
+	for ( i=0 ; i <6 ; i++ ){
+		txt = xt[i];
+		$('.container').append([txt]);
+	};
+});
 
   </script>
 </body>
