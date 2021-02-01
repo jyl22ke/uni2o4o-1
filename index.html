@@ -82,10 +82,11 @@ function vwChart(){
 };
 
 $(function (){
-	fread("codeList");
-	setTimeout(vwChart(), 300);
+	async function () {
+		await fread("codeList");
+		vwChart();
+	};
 });
-
 
   </script>
 </body>
