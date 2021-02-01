@@ -69,7 +69,6 @@ var xt = new Array;
 
 function vwChart(){
 	$(function (){
-		fread("codeList");
 
 		for ( i=0 ; i <codeList.length ; i++ ){
 			xt.push('<div class="vs"><span><b>' + codeList[i][0] + ' ' + codeList[i][1] + '</b></span><br><div class="ss"><iframe style="position:relative; top:-280px; left:-20px;" src="https://finance.naver.com/item/fchart.nhn?code=' + codeList[i][1].substring(1,7) + '" width="632" height="1070" scrolling="no" frameborder="0"></iframe></div></div>');
@@ -81,7 +80,12 @@ function vwChart(){
 		};
 	});
 };
-vwChart();
+
+$(function (){
+	fread("codeList");
+	setTimeout(vwChart(), 300);
+});
+
 
   </script>
 </body>
