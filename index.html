@@ -37,6 +37,8 @@
 
   <script type="text/javascript">
 // csv 파일 읽어오는 함수-------------------
+fread("codeList");
+	  
 function fread(fn){
     $(function (){
 	var fileName = "./" + fn + ".csv";	// 파일 이름
@@ -80,13 +82,7 @@ function mkChart(){
 		};
 	});
 };
-
-function vwChart() {
-$(function (){
-	fread("codeList");
-	mkChart();
-});
-};
+mkChart();
 
   </script>
 </body>
