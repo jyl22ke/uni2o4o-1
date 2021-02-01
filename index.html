@@ -67,7 +67,7 @@ function fread(fn){
 // View Chart 화면 생성-------------------------
 var xt = new Array;
 
-function vwChart(){
+function mkChart(){
 	$(function (){
 
 		for ( i=0 ; i <codeList.length ; i++ ){
@@ -82,11 +82,12 @@ function vwChart(){
 };
 
 $(function (){
-	async function () {
+	async function vwChart() {
 		await fread("codeList");
-		vwChart();
+		mkChart();
 	};
 });
+
 
   </script>
 </body>
