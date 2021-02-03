@@ -13,11 +13,14 @@
 		font-family: Arial;
 		}
 	.vs{
-		position:relative;
 		width:632px;
-		height:480px;
+		height:465px;
 		float:left;
 		border:1px solid red;
+		}
+	.dm{
+		width:632px;
+		height:440px;
 		overflow:auto;
 		}
 	.ss{
@@ -26,11 +29,12 @@
 		height:790px;
 		overflow:hidden;
 		}
-	span{
-		position:absolute;
-		top:0;
-		left:0;
+
+	button{
+		position:relative;
 		}
+  	#s0,#s1,#s2,#s3,#s4,#s5,#s6,#s7,#s8{display:none;}
+
 	  
   </style>
  </head>
@@ -71,24 +75,45 @@ function fread(fn){
 fread("codeList");
 
 
-// View Chart 화면 생성-------------------------
-var xt = new Array;
-
-function vwChart(){
+var btx = new Array; var btxt = ""; var sn = ""; var allsn = "";
+function mkBtn(){
 	$(function (){
-
 		for ( i=0 ; i <codeList.length ; i++ ){
-			xt.push('<div class="vs"><span><b>' + codeList[i][0] + ' ' + codeList[i][1] + '</b></span><br><div class="ss"><iframe style="position:relative; top:-280px; left:-20px;" src="https://finance.naver.com/item/fchart.nhn?code=' + codeList[i][1].substring(1,7) + '" width="632" height="1070" scrolling="no" frameborder="0"></iframe></div></div>');
+ 			sn = "#s" + i;
+			btx.push(' · <button onclick="show(&#39;' + sn + '&#39;);"> ' + codeList[i][1] + ' </button> ');
+			if ( i == codeList.length-1)	{
+				allsn += sn
+			}else{
+				allsn += sn + ","
+			};
 		};
+		btx.unshift(' · <button onclick="$(&#39;' + allsn + '&#39;).hide();"> All Clear </button> ');
 
-		for ( i=0 ; i <xt.length ; i++ ){
-			txt = xt[i];
-			$('.container').append([txt]);
+		for ( i=0 ; i <btx.length ; i++ ){
+			btxt += btx[i];
 		};
+		$('body').prepend([btxt]);
 	});
 };
-vwChart();
+mkBtn();
 
+$(function (){
+// View Chart 화면 생성-------------------------
+var name = ""; var fcode = ""; var code = ""; var xt = new Array;
+
+for ( i=0 ; i <codeList.length ; i++ ){
+	xt.push('<div id="s' + [i] + '" class="vs"><span><b>' + codeList[i][1] + ' &nbsp; ' + codeList[i][0] + ' &nbsp; kos' + codeList[i][2] + '</b></span><br><div class="dm"><div class="ss"><iframe style="position:relative; top:-280px; left:-20px;" src="https://finance.naver.com/item/fchart.nhn?code=' + codeList[i][0].substring(1,7) + '&wmode=transparent" width="632" height="1070" scrolling="no" frameborder="0" class="ifr" wmode="Opaque"></iframe></div></div></div>');
+};
+
+for ( i=0 ; i <xt.length ; i++ ){
+	txt = xt[i];
+	$('.container').append([txt]);
+};
+});
+
+function show(sn){
+	$(sn).show();
+};
 
   </script>
 </body>
